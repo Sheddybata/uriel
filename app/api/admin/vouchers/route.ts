@@ -1,8 +1,11 @@
+import { guardAdminRequest } from "@/lib/admin-auth";
 import { createVouchers, getOverview, isConfigured } from "@/lib/mikrotik";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
+  const denied = await guardAdminRequest();
+  if (denied) return denied;
   if (!isConfigured()) {
     return Response.json(
       { connected: false, message: "MikroTik is not configured. Vouchers were kept in this browser only." },

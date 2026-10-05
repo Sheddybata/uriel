@@ -134,7 +134,7 @@ export function LoginView() {
       <VoucherPurchase open={buyOpen} onOpenChange={setBuyOpen} />
 
       <a
-        href="https://wa.me/2348030001122?text=Hello%20Uriel%20Network%2C%20I%20need%20help%20at%20Terminus%20Market"
+        href="https://wa.me/2349031110001?text=Hello%20Uriel%20Network%2C%20I%20need%20help%20at%20Terminus%20Market"
         className="fixed bottom-5 right-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#10B981] text-white shadow-lg"
         aria-label="WhatsApp agent support"
       >

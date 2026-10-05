@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Radio, Ticket, Users } from "lucide-react";
+import { LayoutDashboard, LogOut, Radio, Ticket, Users } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
 import { RouterStatus } from "@/components/admin/router-status";
 import { cn } from "@/lib/utils";
@@ -55,7 +55,20 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
               <p className="text-sm">MikroTik hotspot</p>
             </div>
           </div>
-          <RouterStatus />
+          <div className="flex items-center gap-3">
+            <RouterStatus />
+            <button
+              type="button"
+              aria-label="Sign out"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 hover:bg-white/5"
+              onClick={async () => {
+                await fetch("/api/admin/session", { method: "DELETE" });
+                window.location.reload();
+              }}
+            >
+              <LogOut className="h-4 w-4" />
+            </button>
+          </div>
         </header>
         <main className="px-5 py-6 pb-24 md:px-8 md:pb-10">{children}</main>
       </div>

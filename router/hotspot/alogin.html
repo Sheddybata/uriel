@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uriel Network</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:28rem;margin:0 auto;padding:2rem 1.25rem}
+.mark{height:80px;width:auto}
+h1{margin:.75rem 0 0;font-size:2.25rem;line-height:1.05;letter-spacing:-.02em;font-weight:500}
+.pill{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;padding:.4rem .75rem;border-radius:999px;background:#ecfdf5;color:#047857;font-size:.75rem;font-weight:500}
+.dot{width:.5rem;height:.5rem;border-radius:999px;background:#10b981}
+.sub{margin:1.5rem 0 0;font-size:.875rem;color:#71717a;line-height:1.5}
+a.go{display:flex;align-items:center;justify-content:center;margin-top:1.5rem;height:3.5rem;border-radius:1rem;background:#800020;color:#fff;text-decoration:none;font-size:1rem;font-weight:500}
+a.plain{display:block;margin-top:1rem;text-align:center;color:#800020;font-size:.875rem;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="mark" src="uriel.png" alt="Uriel Network" onerror="this.style.display='none'">
+  <h1>You are online.</h1>
+  <div class="pill"><span class="dot"></span>PIN $(username) connected</div>
+  <p class="sub">Your voucher is active. Keep this PIN. You can reconnect with it until it runs out.</p>
+  <a class="go" href="$(link-redirect)">Start browsing</a>
+  <a class="plain" href="$(link-status)">See time remaining</a>
+</div>
+<script>
+setTimeout(function(){ location.href = '$(link-redirect)'; }, 4000);
+</script>
+</body>
+</html>

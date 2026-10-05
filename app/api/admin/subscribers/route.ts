@@ -1,14 +1,19 @@
+import { guardAdminRequest } from "@/lib/admin-auth";
 import { applySubscriberAction, getSubscribers, isConfigured } from "@/lib/mikrotik";
 import type { Plan } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  const denied = await guardAdminRequest();
+  if (denied) return denied;
   const payload = await getSubscribers();
   return Response.json(payload, { headers: { "Cache-Control": "no-store" } });
 }
 
 export async function POST(request: Request) {
+  const denied = await guardAdminRequest();
+  if (denied) return denied;
   if (!isConfigured()) {
     return Response.json({ connected: false, message: "MikroTik is not configured." }, { status: 409 });
   }

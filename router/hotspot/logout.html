@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uriel Network</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:28rem;margin:0 auto;padding:2rem 1.25rem}
+.mark{height:80px;width:auto}
+h1{margin:.75rem 0 0;font-size:2.25rem;line-height:1.05;letter-spacing:-.02em;font-weight:500}
+.sub{margin:.75rem 0 0;font-size:.875rem;color:#71717a;line-height:1.5}
+.card{margin-top:1.5rem;border:1px solid #e4e4e7;border-radius:1.5rem;padding:1.25rem}
+.row{display:flex;justify-content:space-between;align-items:baseline;font-size:.875rem;color:#71717a}
+.row+.row{margin-top:.9rem}
+.row b{color:#111;font-weight:500}
+a.go{display:flex;align-items:center;justify-content:center;margin-top:1.5rem;height:3.5rem;border-radius:1rem;background:#800020;color:#fff;text-decoration:none;font-size:1rem;font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="mark" src="uriel.png" alt="Uriel Network" onerror="this.style.display='none'">
+  <h1>You are offline.</h1>
+  <p class="sub">This device has been logged out. Enter your PIN again to come back online.</p>
+  <div class="card">
+    <div class="row"><span>PIN</span><b>$(username)</b></div>
+    <div class="row"><span>Session uptime</span><b>$(uptime)</b></div>
+    <div class="row"><span>Downloaded</span><b>$(bytes-in-nice)</b></div>
+    <div class="row"><span>Uploaded</span><b>$(bytes-out-nice)</b></div>
+  </div>
+  <a class="go" href="$(link-login)">Connect again</a>
+</div>
+</body>
+</html>
